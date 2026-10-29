@@ -1,6 +1,6 @@
 /* Mini Zero greeter (homepage only). Vanilla JS, no dependencies.
-   - Entrance + typed welcome bubble once per session (sessionStorage), idle float afterwards.
-   - Dismissible bubble; click Mini Zero to reopen it any time.
+   - Entrance + typed welcome bubble, idle float afterwards.
+   - The bubble and Ask form stay open. There is no close control.
    - Quick buttons + "Ask Mini Zero" client-side keyword search (synonym map + light fuzzy matching).
    - Optional voice lines (assets/audio/*.mp3): never autoplay; first tap/click or the Hear button starts the welcome.
      Mute toggle persists in localStorage. Respects prefers-reduced-motion (static, no typing, no float).
@@ -22,7 +22,6 @@
   var quick = document.getElementById('mz-quick');
   var form = document.getElementById('mz-form');
   var input = document.getElementById('mz-q');
-  var closeBtn = document.getElementById('mz-close');
   var muteBtn = document.getElementById('mz-mute');
   var hearBtn = document.getElementById('mz-hear');
   var hint = document.getElementById('mz-hint');
@@ -136,7 +135,7 @@
   if (hasAudio) {
     var first = function (e) {
       document.removeEventListener('pointerdown', first, true); document.removeEventListener('keydown', first, true);
-      if (ss('mzWelcomed') || muted || bubble.hidden) { return; }
+      if (ss('mzWelcomed') || muted) { return; }
       if (g.contains(e.target)) { return; } // greeter controls play their own lines
       ss('mzWelcomed', '1'); play('welcome');
     };
@@ -158,16 +157,6 @@
       if (i >= msg.length) { clearInterval(typeTimer); text.classList.remove('typing'); }
     }, 26);
   }
-  function openBubble(instant) {
-    bubble.hidden = false; char.setAttribute('aria-expanded', 'true'); if (hint) { hint.hidden = true; }
-    if (instant !== false) { /* keep current text */ }
-  }
-  function closeBubble() {
-    clearInterval(typeTimer); stopAudio();
-    bubble.hidden = true; char.setAttribute('aria-expanded', 'false'); if (hint) { hint.hidden = false; }
-    ss('mzGreeted', '1');
-  }
-
   var glowTimer = null;
   function point(dest) {
     var d = DEST[dest]; if (!d || !d.href) { return; }
@@ -195,8 +184,6 @@
     if (!m) { answer('fallback', true); return; }
     answer(m, true);
   });
-  closeBtn.addEventListener('click', function () { closeBubble(); char.focus(); });
-  bubble.addEventListener('keydown', function (e) { if (e.key === 'Escape') { closeBubble(); char.focus(); } });
   /* ---------- Hover / tap greeting + click jokes ---------- */
   // Voice lines for these live in assets/audio/mz-hello.mp3 and mz-joke1..9.mp3 (fetched only when played, i.e. after the visitor's first interaction).
   var HELLO = "Hey, how you doin'?";
@@ -229,7 +216,6 @@
     setTimeout(function () { char.classList.remove(cls); }, 1100);
   }
   function speakLine(msg, audioKey, cls) {
-    if (bubble.hidden) { openBubble(); }
     link.hidden = true; quick.hidden = false;
     say(msg, { instant: true });          // bubble text and audio start together
     play(audioKey);
@@ -285,27 +271,22 @@
   if (document.readyState === 'complete') { whenIdle(loadLoop); } else { window.addEventListener('load', function () { whenIdle(loadLoop); }); }
 
   /* ---------- Boot ---------- */
+  char.setAttribute('aria-expanded', 'true');
+  if (hint) { hint.hidden = true; }
   if (ss('mzGreeted')) {
-    // Already greeted this session: no entrance, no typing, bubble tucked away, just the idle float.
-    bubble.hidden = true; char.setAttribute('aria-expanded', 'false'); if (hint) { hint.hidden = false; }
-    live.textContent = '';
+    say(WELCOME, { instant: true });
     if (!reduce) { char.classList.add('idle'); }
   } else {
     ss('mzGreeted', '1');
     if (reduce) { say(WELCOME, { instant: true }); }
     else {
-      bubble.style.visibility = 'hidden'; quick.style.visibility = 'hidden';
       char.classList.add('enter');
-      setTimeout(function () {
-        bubble.style.visibility = ''; say(WELCOME);
-        setTimeout(function () { quick.style.visibility = ''; }, WELCOME.length * 26 + 150);
-      }, 900);
+      say(WELCOME);
       char.addEventListener('animationend', function onEnd(e) {
         if (e.animationName !== 'mzenter') { return; }
         char.removeEventListener('animationend', onEnd);
         char.classList.remove('enter'); char.classList.add('idle');
       });
     }
-    if (!reduce) { /* idle float starts after the entrance finishes */ } else { /* static */ }
   }
 })();
