@@ -35,7 +35,7 @@
   var WELCOME = "Yo! Welcome to ZeroFilterDad HQ. Streams, guides, and zero filter. Let's go!";
   var DEST = {
     streaming: { href: '#streaming', label: 'Go to Streaming', audio: 'streaming', text: "Streams? Right over here. Watch live on Twitch or TikTok." },
-    schedule:  { href: '#schedule', label: 'See the schedule', audio: 'streaming', text: "I'm live Fri 8 PM, Sat 9 AM and 7 PM, Sun 9 AM and 7 PM, all CT. Sunday streams skip kid weekends." },
+    schedule:  { href: '#schedule', label: 'See the schedule', audio: 'streaming', text: "I'm live Fri 8 PM, Sat 9 AM and 7 PM, Sun 9 AM and 7 PM, all CT. On kid weekends, Sunday is a pop-up stream with no set time." },
     beginner:  { href: '#guide', label: 'Open the Beginner Guide', audio: 'beginner', text: "New to streaming? Start right here with the beginner guide." },
     automation:{ href: '#automation', label: 'See the Automation guides', audio: 'automation', text: "Automation. Work smarter, not harder. Look right here." },
     consulting:{ href: '#consulting', label: 'Work with me', audio: 'consulting', text: "Need a hand? Book a call, contact for pricing." },

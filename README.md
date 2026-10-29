@@ -51,7 +51,7 @@ The "Support the Wounded Warrior Project" section sits right after the hero (`#d
 - Arrows flash with CSS only and stop under `prefers-reduced-motion`.
 
 ## Schedule and event
-Central time: Fri 8 PM; Sat 9 AM and 7 PM; Sun 9 AM and 7 PM (no Sunday stream on kid weekends). The WWP charity stream banner/cards (anything with `data-event`) hide themselves automatically after Oct 31, 2026 (`EVENT_END` in `main.js`).
+Central time: Fri 8 PM; Sat 9 AM and 7 PM; Sun 9 AM and 7 PM. On kid weekends, Sunday is a pop-up stream with no set time. The WWP charity stream banner/cards (anything with `data-event`) hide themselves automatically after Oct 31, 2026 (`EVENT_END` in `main.js`).
 
 ## Contact
 All contact points to **hello@zerofilterdad.com**. That mailbox does not exist yet: set up Cloudflare Email Routing (forward to a real inbox) or a mailbox before launch. Consulting pricing reads "Contact for pricing".
