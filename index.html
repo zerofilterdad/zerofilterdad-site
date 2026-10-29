@@ -284,18 +284,22 @@
   </div>
 </section>
 
-<!-- TODO: Brook reads each testimonial that arrives by email (see functions/api/testimonial.js) and decides what, if anything, goes on the site. Nothing is published automatically. -->
+<!-- TODO: Brook reads each testimonial that arrives by email (submitted through Web3Forms, see assets/js/home-extras.js) and decides what, if anything, goes on the site. Nothing is published automatically. -->
 <section id="testimonials" aria-labelledby="testi-h">
   <div class="wrap">
     <div class="section-head"><p class="eyebrow">Kind words</p><h2 id="testi-h" class="chrome">Tell me how it went</h2>
       <p>Watched a stream, used a guide, or tried something I showed you? Tell me what you think.</p></div>
-    <form class="tform" id="tform" data-u="hello" data-d="zerofilterdad.com" novalidate>
+    <form class="tform" id="tform" action="https://api.web3forms.com/submit" method="POST" novalidate>
+      <input type="hidden" name="access_key" value="4f9bd70c-cb6e-4bd5-8c30-7e0d110070cb">
+      <input type="hidden" name="subject" value="New ZeroFilterDad testimonial">
+      <input type="hidden" name="from_name" value="ZeroFilterDad.com">
       <div class="tfields" style="display:grid;gap:16px">
         <div><label for="t-msg">Your testimonial</label>
           <textarea id="t-msg" name="message" maxlength="1000" required placeholder="What did you try, and how did it go?"></textarea></div>
         <div><label for="t-name">Name or handle <small>(optional)</small></label>
           <input id="t-name" name="name" type="text" maxlength="80" autocomplete="nickname" placeholder="How you'd like to be credited"></div>
         <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" style="display:none" aria-hidden="true">
         <div class="tactions"><button class="cta primary" type="submit">Send it to Brook</button></div>
       </div>
       <p class="tnote" id="t-note" aria-live="polite"></p>
