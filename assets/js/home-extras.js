@@ -33,7 +33,7 @@
     if (hp || bot) { /* a bot filled a hidden field: pretend it worked, send nothing */
       form.reset();
       form.classList.add("is-done");
-      say("Thanks! Brook reviews every message before anything goes up.", "ok");
+      say("Thanks! Zero Filter Dad reviews every message before anything goes up.", "ok");
       return;
     }
     var payload = {
@@ -60,7 +60,7 @@
       if (res.ok) {
         form.reset();
         form.classList.add("is-done");
-        say("Thanks! Brook reviews every message before anything goes up.", "ok");
+        say("Thanks! Zero Filter Dad reviews every message before anything goes up.", "ok");
       } else if (res.status === 429) {
         btn.disabled = false;
         say("That's a few in a row. Give it a few minutes and try again.", "warn");
