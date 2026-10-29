@@ -357,7 +357,18 @@ ol.steps li span { color: var(--body); }
 
 /* Mini Zero greeter */
 .greeter { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 190px; align-items: end; gap: 6px; min-height: 380px; }
-.mz-stage { position: relative; display: grid; justify-items: center; align-self: end; }
+.mz-stage { position: relative; display: flex; flex-direction: column; align-items: center; align-self: end; justify-content: flex-end; }
+.mz-tap {
+  pointer-events: none; display: flex; flex-direction: column; align-items: center; gap: 3px; margin: 0 0 4px;
+  font-family: var(--font-heading); font-size: 13px; line-height: 1; letter-spacing: .16em; color: #00b3ff;
+  text-shadow: 0 0 4px #1e90ff, 0 0 12px #00b3ff, 0 0 24px rgba(30, 144, 255, .95);
+  animation: mztapbob 1.8s ease-in-out infinite;
+}
+.mz-tap-arrow {
+  width: 0; height: 0; border-left: 7px solid transparent; border-right: 7px solid transparent; border-top: 9px solid #00b3ff;
+  filter: drop-shadow(0 0 4px #1e90ff) drop-shadow(0 0 10px #00b3ff);
+}
+@keyframes mztapbob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
 .mz-stage::before { content: ""; position: absolute; left: 50%; top: 52%; width: 280px; height: 280px; transform: translate(-50%, -50%); border-radius: 50%;
   background: radial-gradient(circle, rgba(0, 168, 255, .32), transparent 68%); pointer-events: none; }
 .mz-char { position: relative; background: none; border: 0; padding: 0; cursor: pointer; border-radius: 8px; }
@@ -409,7 +420,8 @@ ol.steps li span { color: var(--body); }
 @keyframes mzglow { 0% { box-shadow: 0 0 0 2px var(--blue-light), 0 0 36px rgba(0, 168, 255, .9); } 100% { box-shadow: 0 0 0 0 transparent, 0 0 0 transparent; } }
 
 @media (max-width: 899px) {
-  .greeter { grid-template-columns: minmax(0, 1fr) 96px; min-height: 0; margin-top: 8px; }
+  .greeter { grid-template-columns: minmax(0, 1fr) max-content; min-height: 0; margin-top: 8px; }
+  .mz-tap { font-size: 11px; letter-spacing: .1em; }
   .mz-char img, .mz-char video { width: 96px; }
   .mz-stage::before { width: 160px; height: 160px; }
   .mz-bubble { margin-bottom: 14px; }
@@ -424,7 +436,7 @@ ol.steps li span { color: var(--body); }
   .event-bar .msg strong { font-size: .9rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .mz-char.idle, .mz-char.enter, .mz-glow, .live-badge i { animation: none !important; }
+  .mz-char.idle, .mz-char.enter, .mz-glow, .live-badge i, .mz-tap { animation: none !important; }
   .mz-text.typing::after { animation: none; }
 }
 
