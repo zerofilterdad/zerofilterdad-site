@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ZeroFilterDad | You don't need another pitch.</title>
+<meta name="description" content="I built this to help, not to hype. If what I make helps you, great. If not, that's fine too. Live gaming, streaming guides, automation help and merch from ZeroFilterDad.">
+<meta name="theme-color" content="#050608">
+<!-- TODO: once the domain is attached, confirm this canonical URL (https://zerofilterdad.com/ vs www). -->
+<link rel="canonical" href="https://zerofilterdad.com/">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ZeroFilterDad">
+<meta property="og:title" content="ZeroFilterDad | You don't need another pitch.">
+<meta property="og:description" content="I built this to help, not to hype. If what I make helps you, great. If not, that's fine too. Live gaming, streaming guides, automation help and merch from ZeroFilterDad.">
+<meta property="og:image" content="https://zerofilterdad.com/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@Zerofilterdad">
+<link rel="preload" href="assets/fonts/RussoOne-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/Inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/home-extras.css?v=1">
+<script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
+<script src="assets/js/main.js" defer></script>
+<script src="assets/js/greeter.js" defer></script>
+<script src="assets/js/home-extras.js?v=1" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap nav-row">
+    <a class="brand" href="index.html" aria-label="ZeroFilterDad home">
+      <img src="assets/img/logo.png" width="40" height="40" alt="">
+      <span>ZeroFilterDad</span>
+    </a>
+    <div class="nav-wrap">
+      <!-- TODO: the Live badge is a static link to Twitch (it does not know if Brook is live). Wire it to Twitch's live status later, or show it only during scheduled stream windows. -->
+      <a class="live-badge" href="https://www.twitch.tv/zerofilterdad" target="_blank" rel="noopener noreferrer"><i aria-hidden="true"></i><span class="lb-w">Watch </span>live<span class="sr-only"> (opens in a new tab)</span></a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list">Menu</button>
+      <nav aria-label="Main"><ul class="nav-list" id="nav-list"><li><a href="streaming.html">Stream</a></li><li><a href="beginner-guide.html">Guides</a></li><li><a href="automation-guides.html">Automation</a></li><li><a href="consulting.html">Work With Me</a></li><li><a href="merch.html">Merch</a></li><li><a href="index.html#give-back">Give Back</a></li></ul></nav>
+    </div>
+  </div>
+</header>
+<div class="event-bar" id="event-bar" data-event>
+  <div class="wrap">
+    <p class="msg"><span class="tagpill">Charity stream</span>
+      <strong>Wounded Warrior Project</strong>
+      <span><time data-ts="2026-10-30T19:30:00-05:00">Fri, Oct 30 &middot; 7:30 PM CT</time> &middot; DJ Cyber Sentinel joins at <time data-ts="2026-10-30T20:00:00-05:00">8 PM CT</time></span></p>
+    <div class="acts">
+      <a class="cta primary small" href="https://communityfundraising.woundedwarriorproject.org/campaigns/zerofilterdad-gives-back" target="_blank" rel="noopener noreferrer">Donate directly on WWP<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="cta small" href="https://www.twitch.tv/zerofilterdad" target="_blank" rel="noopener noreferrer">Watch on Twitch<span class="sr-only"> (opens in a new tab)</span></a>
+    </div>
+  </div>
+</div>
+<!-- TODO: event bar appears on every page and hides itself after Oct 31, 2026 (see EVENT_END in assets/js/main.js). Times are in CT, not CST: daylight time is in effect Oct 30. -->
+<main id="main">
+<div class="hero">
+  <div class="wrap split">
+    <div>
+      <p class="eyebrow">ZeroFilterDad HQ</p>
+      <h1 class="chrome">You don't need another pitch.</h1>
+      <p class="lead">I built this to help, not to hype. If what I make helps you, great. If not, that's fine too.</p>
+      <div class="cta-row">
+        <a class="cta primary" href="beginner-guide.html">Start Here</a>
+      </div>
+      <p class="todo">TODO: hero headline and subline are Brook-approved copy. The greeter welcome line and answers are placeholder copy (assets/js/greeter.js).</p>
+    </div>
+    <div class="hero-art-wrap">
+<div class="greeter" id="greeter" data-audio="1">
+  <!-- TODO COPY: welcome line + answers are placeholder copy in Mini Zero's voice. Edit in index.html (welcome) and assets/js/greeter.js (answers). -->
+  <div class="mz-bubble" id="mz-bubble" role="region" aria-label="Mini Zero, your site guide">
+    <div class="mz-bar">
+      <span class="mz-name">Mini Zero</span>
+      <button class="mz-ico" id="mz-mute" type="button" aria-pressed="false" aria-label="Mute Mini Zero" hidden>
+        <svg class="on" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 10v4h4l5 4V6L7 10H3zm13.5 2A4.5 4.5 0 0 0 14 8v8a4.5 4.5 0 0 0 2.5-4zM14 3.2v2.1a7 7 0 0 1 0 13.4v2.1a9 9 0 0 0 0-17.6z"/></svg>
+        <svg class="off" viewBox="0 0 24 24" aria-hidden="true" hidden><path d="M3 10v4h4l5 4V6L7 10H3zm13.6 2 2.4-2.4-1.4-1.4-2.4 2.4-2.4-2.4-1.4 1.4 2.4 2.4-2.4 2.4 1.4 1.4 2.4-2.4 2.4 2.4 1.4-1.4z"/></svg>
+      </button>
+      <button class="mz-ico" id="mz-close" type="button" aria-label="Dismiss Mini Zero's message">&times;</button>
+    </div>
+    <p class="mz-text" id="mz-text" aria-hidden="true">Yo! Welcome to ZeroFilterDad HQ. Streams, guides, and zero filter. Let&rsquo;s go!</p>
+    <p class="sr-only" id="mz-live" aria-live="polite">Yo! Welcome to ZeroFilterDad HQ. Streams, guides, and zero filter. Let&rsquo;s go!</p>
+    <a class="mz-link" id="mz-link" href="#" hidden></a>
+    <form class="mz-ask js-only" id="mz-form" role="search" autocomplete="off">
+      <label for="mz-q">Ask Mini Zero</label>
+      <div class="row"><input id="mz-q" name="q" type="search" placeholder="What are you looking for?" enterkeyhint="search"><button class="cta primary small" type="submit">Ask</button></div>
+    </form>
+    <div class="mz-quick" id="mz-quick">
+      <a class="mz-chip" data-dest="streaming" href="#streaming">Watch streams</a>
+      <a class="mz-chip" data-dest="beginner" href="#guide">Start streaming</a>
+      <a class="mz-chip" data-dest="automation" href="#automation">Automate</a>
+      <a class="mz-chip" data-dest="consulting" href="#consulting">Hire me</a>
+      <a class="mz-chip" data-dest="merch" href="#merch">Merch</a>
+    </div>
+    <button class="cta small mz-hear" id="mz-hear" type="button" hidden>&#9654; Hear Mini Zero</button>
+  </div>
+  <div class="mz-stage">
+    <span class="mz-hint" id="mz-hint" hidden>Ask me</span>
+    <button class="mz-char" id="mz-char" type="button" aria-expanded="true" aria-controls="mz-bubble" aria-label="Ask Mini Zero">
+      <img src="assets/img/mini-zero.webp" width="505" height="898" alt="Mini Zero, the ZeroFilterDad mascot: a bearded gnome in a black ZFD cap and glasses, arms crossed" decoding="async" fetchpriority="high">
+      <video class="mz-vid" id="mz-vid" width="294" height="540" poster="assets/img/mini-zero.webp" autoplay muted loop playsinline preload="none" disablepictureinpicture tabindex="-1" aria-hidden="true" hidden></video>
+    </button>
+  </div>
+  <p class="mz-cap">Mini Zero, my AI teammate. A little sass, a lot of class.</p>
+</div>
+</div>
+  </div>
+</div>
+
+<section id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="card accent about-card">
+      <img class="about-avatar" src="assets/img/avatar-stylized.png" width="160" height="160" loading="lazy" decoding="async" alt="Stylized avatar of Brook, the ZeroFilterDad host">
+      <div>
+        <h2 id="about-h" class="chrome">About me</h2>
+        <p class="lead">I'm a 46-year-old dad with a lifetime of real-world experience. Streaming since 2024, and in that time I've built my own OBS apps, automated my editing and clip workflow, and turned the whole thing into something that actually runs. I'm not an expert with all the answers. I'm the guy next to you who's a few steps ahead and happy to share what he's learned.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="proof" aria-label="Channel highlights">
+  <div class="wrap">
+    <div class="strip">
+      <div class="stat"><div class="n">00K+</div><div class="l">Followers</div></div>
+      <div class="stat"><div class="n">00</div><div class="l">Years streaming</div></div>
+      <div class="stat"><div class="n">000+</div><div class="l">Streams played</div></div>
+      <div class="stat"><div class="n">000</div><div class="l">Community members</div></div>
+    </div>
+    <p class="todo">TODO: proof-strip numbers are dummy values. Replace with real, verifiable numbers (or delete the strip). No donation totals here, per WWP rules.</p>
+  </div>
+</section>
+
+<section aria-labelledby="intent-h">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Start here</p><h2 id="intent-h" class="chrome">What are you looking for?</h2></div>
+    <div class="grid c4">
+      <a class="card accent" href="beginner-guide.html"><span class="num">01</span><h3>Start streaming</h3><p>Gear, OBS and the mistakes I made so you don&rsquo;t have to.</p><span class="more">Beginner guide &rsaquo;</span></a>
+      <a class="card accent" href="automation-guides.html"><span class="num">02</span><h3>Automate my stream</h3><p>Clips, scheduling and AI helpers that save hours.</p><span class="more">Automation guides &rsaquo;</span></a>
+      <a class="card accent" href="consulting.html"><span class="num">03</span><h3>Hire an advisor</h3><p>One-on-one help with workflow, editing and AI.</p><span class="more">Work with me &rsaquo;</span></a>
+      <a class="card accent" href="#give-back"><span class="num">04</span><h3>Support the cause</h3><p>Streaming to benefit Wounded Warrior Project.</p><span class="more">Give back &rsaquo;</span></a>
+    </div>
+  </div>
+</section>
+
+<section id="streaming" aria-labelledby="stream-h">
+  <div class="wrap split even">
+    <div>
+      <p class="eyebrow">Live</p>
+      <h2 id="stream-h" class="chrome">Streaming</h2>
+      <p class="lead" style="margin-top:14px">Come hang out, ask questions, and watch the bad decisions happen live.</p>
+      <div class="cta-row">
+        <a class="cta primary" href="https://www.twitch.tv/zerofilterdad" target="_blank" rel="noopener noreferrer">Watch on Twitch<span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="cta" href="https://www.tiktok.com/@zerofilterdad" target="_blank" rel="noopener noreferrer">TikTok LIVE<span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="cta" href="streaming.html">Full schedule</a>
+      </div>
+      <!-- TODO: latest clips/VODs row goes here (YouTube/Twitch embeds) once there are clips to show. -->
+    </div>
+    <div id="schedule">
+      <h3 style="margin-bottom:14px">Stream schedule <span class="pill">CT</span></h3>
+      <div class="card table-wrap"><table class="sched">
+<thead><tr><th scope="col">Day</th><th scope="col">Time (CT)</th></tr></thead><tbody><tr><th scope="row" class="when">Friday</th><td><span class="slot-time" data-dow="5" data-hour="20">8:00 PM CT</span></td></tr>
+<tr><th scope="row" class="when">Saturday</th><td><span class="slot-time" data-dow="6" data-hour="9">9:00 AM CT</span><span class="slot-time" data-dow="6" data-hour="19">7:00 PM CT</span></td></tr>
+<tr><th scope="row" class="when">Sunday*</th><td><span class="slot-time" data-dow="0" data-hour="9">9:00 AM CT</span><span class="slot-time" data-dow="0" data-hour="19">7:00 PM CT</span></td></tr></tbody></table></div>
+<p class="callout"><strong>*Sunday streams happen on alternating weekends.</strong> On kid weekends there is no Sunday stream.</p>
+    </div>
+  </div>
+</section>
+
+<section id="guide" aria-labelledby="guide-h">
+  <div class="wrap split even">
+    <div>
+      <p class="eyebrow">Free guide</p>
+      <h2 id="guide-h" class="chrome">10 things I wish I knew before streaming</h2>
+      <p class="lead" style="margin-top:14px">The free beginner guide, without the filler. Drop your email and I&rsquo;ll send it the moment it&rsquo;s ready.</p>
+      <form class="signup" novalidate>
+        <label class="sr-only" for="guide-email">Email address</label>
+        <input id="guide-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+        <button class="cta primary" type="submit">Get the guide</button>
+      </form>
+      <p class="signup-note" aria-live="polite"></p>
+      <p class="todo">TODO: email capture is not wired to a service yet (see main.js). Pick the tool (Beehiiv, Mailchimp, Fourthwall) first.</p>
+    </div>
+    <div class="card accent">
+      <span class="pill soon">Coming soon</span>
+      <h3 style="margin-top:12px">Complete Streamer Startup Guide</h3>
+      <p>The full step-by-step version: gear order, OBS, growth, and the money side.</p>
+      <p class="price"><small>Price: TBD</small></p>
+      <a class="cta small" href="beginner-guide.html">See what&rsquo;s inside</a>
+      <!-- TODO: price + cover art for the paid guide. Use one cover template across all guides. -->
+    </div>
+  </div>
+</section>
+
+<section id="automation" aria-labelledby="auto-h">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Work smarter</p><h2 id="auto-h" class="chrome">Automation guides</h2><p>Practical guides for letting software handle the repetitive creator work.</p></div>
+    <div class="grid c3">
+      <article class="card"><span class="pill soon">Coming soon</span><h3 style="margin-top:12px">Clip pipeline</h3><p>Turn every stream into ready-to-post clips with minimal hands-on time.</p><p class="price"><small>Price: TBD</small></p></article>
+      <article class="card"><span class="pill soon">Coming soon</span><h3 style="margin-top:12px">Scheduled posting</h3><p>Plan a week of posts in one sitting and let a scheduler publish them.</p><p class="price"><small>Price: TBD</small></p></article>
+      <article class="card"><span class="pill soon">Coming soon</span><h3 style="margin-top:12px">AI assistants for creators</h3><p>Use an assistant for drafts, captions and reminders, with you approving anything public.</p><p class="price"><small>Price: TBD</small></p></article>
+    </div>
+    <div class="cta-row"><a class="cta" href="automation-guides.html">All automation guides</a></div>
+    <p class="todo">TODO: guide titles, previews and prices are placeholders. Keep private prompts/templates off the public site.</p>
+  </div>
+</section>
+
+<section id="consulting" aria-labelledby="cons-h">
+  <div class="wrap split even">
+    <div>
+      <p class="eyebrow">Work with me</p>
+      <h2 id="cons-h" class="chrome">Consulting &amp; advisor</h2>
+      <p class="lead" style="margin-top:14px">One-on-one advice on content workflow, editing, and AI and automation.</p>
+      <div class="cta-row">
+        <a class="cta primary" href="#" data-u="hello" data-d="zerofilterdad.com" data-subject="Book a call">Book a call</a>
+        <a class="cta" href="consulting.html">How it works</a>
+      </div>
+      <p class="hero-sub">Contact for pricing.</p>
+    </div>
+    <div class="card">
+      <h3>What you get</h3>
+      <ul><li>A repeatable weekly content workflow</li><li>Faster, cleaner edits for clips and shorts</li><li>Practical AI and automation, no hype</li></ul>
+      <h3 style="margin-top:18px">Who it&rsquo;s for</h3>
+      <p>Creators and small gaming communities who want to spend less time on busywork.</p>
+      <p class="todo">TODO: refine the offer list and audience.</p>
+    </div>
+  </div>
+</section>
+
+<section id="give-back" aria-labelledby="h-wwp">
+  <div class="wrap">
+    <div class="wwp">
+      <p class="eyebrow">ZeroFilterDad Gives Back</p>
+      <h2 id="h-wwp" class="chrome">Streaming to benefit Wounded Warrior Project</h2>
+      <div data-event>
+        <p class="when">Fri, Oct 30, 2026 &middot; <time data-ts="2026-10-30T19:30:00-05:00">7:30 PM CT</time></p>
+        <p style="margin-top:8px"><strong style="color:var(--white)">DJ Cyber Sentinel</strong> joins the stream at <time data-ts="2026-10-30T20:00:00-05:00">8 PM CT</time>.</p>
+        <p style="margin-top:14px;max-width:62ch">Watch live on Twitch and donate right there with Twitch&rsquo;s built-in charity feature. Prefer to give outside Twitch? Donate directly on the Wounded Warrior Project campaign page.</p>
+      </div>
+      <div data-event-over hidden>
+        <p style="margin-top:14px;max-width:62ch">Thank you for showing up for Wounded Warrior Project. You can still give directly through the campaign page.</p>
+      </div>
+      <!-- TODO: WWP copy rules (Brook's notes): say "benefiting Wounded Warrior Project"; never show a dollar amount, percentage or share of sales; no merch tie-in; no WWP logo until WWP approves. Event details hide automatically after Oct 31, 2026; the thank-you line replaces them. -->
+      <div class="cta-row">
+        <a class="cta primary" href="https://communityfundraising.woundedwarriorproject.org/campaigns/zerofilterdad-gives-back" target="_blank" rel="noopener noreferrer">Donate directly on WWP<span class="sr-only"> (opens in a new tab)</span></a>
+        <a class="cta" href="https://www.twitch.tv/zerofilterdad" target="_blank" rel="noopener noreferrer" data-event>Join on Twitch<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+      <p class="todo">TODO: confirm times with Brook one more time before launch (7:30 PM CT start, 8 PM CT guest). Earlier planning notes mentioned 9 PM ET; the approved promo says 7:30 PM CT.</p>
+    </div>
+  </div>
+</section>
+
+<section id="merch" aria-labelledby="merch-h">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Official shop</p><h2 id="merch-h" class="chrome">Merch</h2><p>ZFD gear from the official shop on Fourthwall.</p></div>
+    <div class="grid c4">
+      <!-- TODO: placeholder product tiles. Replace with real product images + deep links. Do not invent prices. -->
+      <a class="card product" href="https://zerofilterdad-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer"><div class="slot" role="img" aria-label="Product image placeholder">Product image</div><h3>Hoodie</h3><span class="more">View in shop<span class="sr-only"> (opens in a new tab)</span></span></a>
+      <a class="card product" href="https://zerofilterdad-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer"><div class="slot" role="img" aria-label="Product image placeholder">Product image</div><h3>Hat</h3><span class="more">View in shop<span class="sr-only"> (opens in a new tab)</span></span></a>
+      <a class="card product" href="https://zerofilterdad-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer"><div class="slot" role="img" aria-label="Product image placeholder">Product image</div><h3>Tee</h3><span class="more">View in shop<span class="sr-only"> (opens in a new tab)</span></span></a>
+      <a class="card product" href="https://zerofilterdad-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer"><div class="slot" role="img" aria-label="Product image placeholder">Product image</div><h3>Stickers &amp; drinkware</h3><span class="more">View in shop<span class="sr-only"> (opens in a new tab)</span></span></a>
+    </div>
+    <div class="trust" role="list">
+      <div role="listitem"><b>Official</b> shop on Fourthwall</div>
+      <div role="listitem"><b>Secure</b> checkout</div>
+      <div role="listitem"><b>Shipping</b> shown at checkout</div>
+      <div role="listitem"><b>Returns</b> per shop policy</div>
+    </div>
+    <div class="cta-row"><a class="cta primary" href="https://zerofilterdad-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer">Shop all merch<span class="sr-only"> (opens in a new tab)</span></a></div>
+    <p class="todo">TODO: product picks, and confirm shipping/returns wording and any free-shipping threshold in Fourthwall before publishing the trust strip.</p>
+  </div>
+</section>
+
+<section id="meet-mini-zero" aria-labelledby="mz-about-h">
+  <div class="wrap split even">
+    <div class="mz-about">
+      <img src="assets/img/mini-zero-sm.webp" width="303" height="539" loading="lazy" decoding="async" alt="Mini Zero, the ZeroFilterDad mascot, arms crossed">
+    </div>
+    <div>
+      <p class="eyebrow">The crew</p>
+      <h2 id="mz-about-h" class="chrome">Meet Mini Zero</h2>
+      <p class="lead" style="margin-top:14px">Mini Zero is ZeroFilterDad&rsquo;s AI teammate: part co-pilot, part hype man, and the only one on the crew who never needs a coffee break. He clips the streams, keeps the schedule tight, and runs the automations behind the scenes, so Dad can stay in the game. A little sass, a lot of class. Ask him anything; he&rsquo;ll point you the right way (and maybe roast your aim on the way there).</p>
+    </div>
+  </div>
+</section>
+
+<!-- TODO: Brook reads each testimonial that arrives by email (see functions/api/testimonial.js) and decides what, if anything, goes on the site. Nothing is published automatically. -->
+<section id="testimonials" aria-labelledby="testi-h">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">Kind words</p><h2 id="testi-h" class="chrome">Tell me how it went</h2>
+      <p>Watched a stream, used a guide, or tried something I showed you? Tell me what you think.</p></div>
+    <form class="tform" id="tform" data-u="hello" data-d="zerofilterdad.com" novalidate>
+      <div class="tfields" style="display:grid;gap:16px">
+        <div><label for="t-msg">Your testimonial</label>
+          <textarea id="t-msg" name="message" maxlength="1000" required placeholder="What did you try, and how did it go?"></textarea></div>
+        <div><label for="t-name">Name or handle <small>(optional)</small></label>
+          <input id="t-name" name="name" type="text" maxlength="80" autocomplete="nickname" placeholder="How you'd like to be credited"></div>
+        <div class="hp" aria-hidden="true"><label>Leave this empty<input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+        <div class="tactions"><button class="cta primary" type="submit">Send it to Brook</button></div>
+      </div>
+      <p class="tnote" id="t-note" aria-live="polite"></p>
+    </form>
+    <p class="tfine" style="margin-top:14px">Nothing is posted automatically. I read every message first.</p>
+    <p class="tfine t-nojs">Prefer email? Write to hello [at] zerofilterdad [dot] com.</p>
+  </div>
+</section>
+
+<section id="faq" aria-labelledby="faq-h">
+  <div class="wrap">
+    <div class="section-head"><p class="eyebrow">FAQ</p><h2 id="faq-h" class="chrome">Straight answers</h2></div>
+    <div class="faq">
+      <details class="card">
+        <summary>Do I need a good PC?</summary>
+        <div class="ans"><p>No. You can start with a phone, a console (PS5 or Xbox) or a laptop. A phone works for TikTok LIVE, which needs you to be 18+ and have 1,000 followers. A gaming PC can come later, if you ever need one.</p>
+        <p>Your internet matters more than your hardware. The minimum is 25 down and 5 up. The <a href="beginner-guide.html">beginner guide</a> covers the rest.</p></div>
+      </details>
+      <details class="card">
+        <summary>How much does streaming cost?</summary>
+        <div class="ans"><p>You can start close to free. OBS, the streaming software, costs nothing, and the platforms are free to join. What you&rsquo;ll eventually pay for is gear: a headset, a webcam and decent internet.</p>
+        <p>Don&rsquo;t buy it all up front. Add one piece at a time, in the right order. That order is in the <a href="beginner-guide.html">beginner guide</a>.</p></div>
+      </details>
+      <details class="card">
+        <summary>Can I stream on a budget?</summary>
+        <div class="ans"><p>Yes, and that&rsquo;s how I&rsquo;d start. Use the phone, console or laptop you already have, and use OBS because it&rsquo;s free. Get your internet to 25 down and 5 up before you spend anything else.</p>
+        <p>If you do buy something, start with audio. People forgive a rough picture, but not bad sound. More in the <a href="beginner-guide.html">beginner guide</a>.</p></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<section id="newsletter" aria-labelledby="news-h">
+  <div class="wrap">
+    <div class="card accent center" style="padding:44px 24px">
+      <p class="eyebrow">Newsletter</p>
+      <h2 id="news-h" class="chrome">Get the drop first</h2>
+      <p class="lead" style="margin:14px auto 0">You'll get occasional updates when new guides or info drop. No spam.</p>
+      <form class="signup" style="max-width:520px;margin:24px auto 0" novalidate>
+        <label class="sr-only" for="news-email">Email address</label>
+        <input id="news-email" type="email" name="email" placeholder="you@email.com" autocomplete="email" required>
+        <button class="cta primary" type="submit">Sign me up</button>
+      </form>
+      <p class="signup-note" aria-live="polite"></p>
+      <p class="todo">TODO: newsletter signup is a placeholder (not connected). Add a privacy line before collecting real emails.</p>
+    </div>
+  </div>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <p class="eyebrow" style="margin-bottom:10px">ZeroFilterDad</p>
+        <p>Dad. Driver. Gamer. Zero filter. Live streams, honest guides, and creator automation.</p>
+        <p style="margin-top:10px"><a class="" href="#" data-u="hello" data-d="zerofilterdad.com" data-subject="ZeroFilterDad inquiry" data-show>hello [at] zerofilterdad [dot] com</a><noscript> hello [at] zerofilterdad [dot] com</noscript></p>
+      </div>
+      <div><h2>Explore</h2><ul><li><a href="index.html">Home</a></li><li><a href="streaming.html">Stream</a></li><li><a href="beginner-guide.html">Guides</a></li><li><a href="automation-guides.html">Automation</a></li><li><a href="consulting.html">Work With Me</a></li><li><a href="merch.html">Merch</a></li><li><a href="index.html#give-back">Give Back</a></li></ul></div>
+      <div><h2>Follow</h2><ul><li><a href="https://www.twitch.tv/zerofilterdad" target="_blank" rel="noopener noreferrer">Twitch<span class="sr-only"> (opens in a new tab)</span></a></li><li><a href="https://www.tiktok.com/@zerofilterdad" target="_blank" rel="noopener noreferrer">TikTok<span class="sr-only"> (opens in a new tab)</span></a></li><li><a href="https://www.youtube.com/@ZeroFilterDad" target="_blank" rel="noopener noreferrer">YouTube<span class="sr-only"> (opens in a new tab)</span></a></li><li><a href="https://x.com/Zerofilterdad" target="_blank" rel="noopener noreferrer">X<span class="sr-only"> (opens in a new tab)</span></a></li><li><a href="https://kick.com/zerofilterdad" target="_blank" rel="noopener noreferrer">Kick<span class="sr-only"> (opens in a new tab)</span></a></li><li><a href="https://www.instagram.com/zerofilterdadd/" target="_blank" rel="noopener noreferrer">Instagram<span class="sr-only"> (opens in a new tab)</span></a></li><li><a href="https://discord.gg/AvTQnnGdca" target="_blank" rel="noopener noreferrer">Discord<span class="sr-only"> (opens in a new tab)</span></a></li></ul></div>
+    </div>
+    <!-- TODO: footer legal line. Entity name (e.g. "Zero Filter Studios LLC") only once the LLC actually exists. Add privacy/terms pages if you collect emails or sell guides here. -->
+    <div class="foot-legal"><span>&copy; 2026 ZeroFilterDad</span><span>Dad. Driver. Gamer. Zero filter.</span></div>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,8 @@
+preview-*.png
+node_modules/
+*.zip
+*.pyc
+__pycache__/
+test*.py
+test*.out
+.DS_Store
