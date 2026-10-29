@@ -450,10 +450,24 @@ ol.steps li span { color: var(--body); }
 @media (prefers-reduced-motion: reduce) { .mz-char.tip img, .mz-char.joke img, .mz-char.tip video, .mz-char.joke video { animation: none !important; } }
 
 /* About me card (homepage, right after the hero) */
-.about-card { display: grid; grid-template-columns: 160px 1fr; gap: 28px; align-items: center; padding: 32px; }
+.about-card { display: grid; grid-template-columns: 200px 1fr; gap: 28px; align-items: center; padding: 32px; }
 .about-card h2 { margin-bottom: 12px; }
-.about-avatar { width: 160px; height: 160px; border-radius: var(--radius); border: 1px solid var(--line-blue); box-shadow: 0 0 22px rgba(0, 168, 255, .25); display: block; }
-@media (max-width: 640px) { .about-card { grid-template-columns: 1fr; padding: 24px; gap: 18px; justify-items: start; } .about-avatar { width: 112px; height: 112px; } }
+.about-avatar { width: 200px; height: auto; aspect-ratio: 604 / 819; object-fit: cover; object-position: top; border-radius: var(--radius); border: 1px solid var(--line-blue); box-shadow: 0 0 22px rgba(0, 168, 255, .25); display: block;
+  background: radial-gradient(75% 60% at 50% 38%, rgba(0, 168, 255, .45), transparent 75%), var(--panel); }   /* real photo with transparent background: blue glow behind him */
+@media (max-width: 640px) { .about-card { grid-template-columns: 1fr; padding: 24px; gap: 18px; justify-items: start; } .about-avatar { width: 150px; } }
+
+/* Real photos of Brook (transparent cutouts): shared frame with a blue glow behind him */
+.bio-photo { display: block; width: 200px; height: auto; aspect-ratio: 540 / 760; object-fit: cover; object-position: top; border-radius: var(--radius); border: 1px solid var(--line-blue); box-shadow: 0 0 22px rgba(0, 168, 255, .25);
+  background: radial-gradient(75% 60% at 50% 38%, rgba(0, 168, 255, .45), transparent 75%), var(--panel); }
+.bio-photo.round { width: 190px; aspect-ratio: 1; border-radius: 50%; object-position: 50% 28%; border-color: var(--blue-glow); box-shadow: 0 0 0 4px rgba(0, 168, 255, .12), 0 0 26px rgba(0, 168, 255, .4); }
+.card.with-photo { display: grid; grid-template-columns: 190px 1fr; gap: 32px; align-items: center; }
+.split-photo { display: grid; grid-template-columns: 1fr 200px; gap: 40px; align-items: center; }
+@media (max-width: 700px) {
+  .card.with-photo { grid-template-columns: 1fr; gap: 20px; justify-items: start; }
+  .bio-photo.round { width: 140px; }
+  .split-photo { grid-template-columns: 1fr; gap: 22px; }
+  .split-photo .bio-photo { width: 160px; }
+}
 
 /* Streaming page */
 .sched-foot { margin-top: 14px; color: var(--body); font-size: .95rem; }

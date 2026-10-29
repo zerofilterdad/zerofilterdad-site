@@ -1,0 +1,76 @@
+/* Donate section + sticky pill (homepage). Uses the theme variables from style.css. */
+.donate-card {
+  border: 1px solid var(--line-blue); border-radius: var(--radius); padding: 40px; text-align: center;
+  background: radial-gradient(70% 120% at 50% 0%, rgba(0, 168, 255, .18), transparent 65%), var(--panel);
+  box-shadow: 0 0 28px rgba(0, 168, 255, .18);
+}
+.donate-card .eyebrow { justify-content: center; }
+.donate-card .eyebrow::after { content: ""; width: 28px; height: 2px; background: var(--blue-glow); }
+.donate-card h2 { font-size: clamp(1.5rem, 3.4vw, 2.2rem); }
+.donate-when { margin: 14px auto 0; max-width: 62ch; color: var(--body); font-size: 1.05rem; }
+.donate-when[hidden] { display: none; }
+
+/* Arrows + button */
+.donate-cta { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 28px; flex-wrap: wrap; }
+.donate-pointer { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.donate-gives { font: 800 .72rem/1.2 var(--font-body); letter-spacing: .16em; text-transform: uppercase; color: var(--silver); }
+.donate-arrows { display: flex; align-items: center; gap: 12px; }
+.donate-label {
+  font: 400 1.35rem/1 var(--font-heading); text-transform: uppercase; letter-spacing: .06em; color: var(--blue-light);
+  text-shadow: 0 0 6px var(--blue-glow), 0 0 18px var(--blue-glow);
+  animation: donate-flash 1.2s ease-in-out infinite;
+}
+.donate-chevs { display: inline-flex; }
+.donate-chevs i {
+  display: block; width: 22px; height: 22px; margin-left: -6px;
+  border-top: 5px solid var(--blue-glow); border-right: 5px solid var(--blue-glow);
+  transform: rotate(45deg) scale(.8);
+  filter: drop-shadow(0 0 4px var(--blue-glow)) drop-shadow(0 0 10px var(--blue-glow));
+  animation: donate-flash 1.2s ease-in-out infinite;
+}
+.donate-chevs i:nth-child(2) { animation-delay: .2s; }
+.donate-chevs i:nth-child(3) { animation-delay: .4s; }
+@keyframes donate-flash { 0%, 100% { opacity: .25; } 50% { opacity: 1; } }
+
+/* Progress */
+.donate-progress { max-width: 560px; margin: 32px auto 0; }
+.donate-progress[hidden] { display: none; }
+.donate-stat { font: 400 1.15rem var(--font-heading); color: var(--white); letter-spacing: .03em; }
+.donate-bar {
+  height: 18px; margin-top: 10px; border-radius: 999px; overflow: hidden; background: #07080b;
+  border: 1px solid var(--line-blue); box-shadow: inset 0 0 8px rgba(0, 0, 0, .8);
+}
+.donate-fill {
+  display: block; height: 100%; width: 0; border-radius: 999px;
+  background: linear-gradient(90deg, var(--blue-deep), var(--blue-glow), var(--blue-light));
+  box-shadow: 0 0 14px var(--blue-glow); transition: width .8s ease;
+}
+.donate-note { margin-top: 10px; font-size: .82rem; color: var(--muted); }
+
+/* Sticky pill: small, bottom-left, hides while the donate section is on screen */
+.donate-pill {
+  position: fixed; left: 14px; bottom: 14px; z-index: 40;
+  display: inline-flex; align-items: center; min-height: 40px; padding: 8px 16px; border-radius: 999px;
+  background: var(--panel-flat); color: var(--blue-light); border: 1.5px solid var(--blue-glow);
+  font: 800 .72rem/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase; text-decoration: none;
+  box-shadow: 0 0 14px rgba(0, 168, 255, .45); transition: opacity .2s ease, transform .2s ease;
+}
+.donate-pill:hover, .donate-pill:focus-visible { color: var(--white); background: rgba(0, 168, 255, .2); box-shadow: var(--glow); }
+.donate-pill[hidden] { display: none; }
+.donate-pill.is-away { opacity: 0; pointer-events: none; transform: translateY(8px); }
+
+@media (max-width: 700px) {
+  .donate-card { padding: 26px 18px; }
+  .donate-cta { flex-direction: column; gap: 14px; }
+  .donate-arrows { flex-direction: column; gap: 6px; }
+  .donate-label { font-size: 1.15rem; }
+  .donate-chevs { flex-direction: column; align-items: center; }
+  .donate-chevs i { margin: -6px 0 0; transform: rotate(135deg) scale(.8); }
+  .donate-btn { width: 100%; text-align: center; line-height: 1.3; }
+  .donate-pill { left: 10px; bottom: 10px; min-height: 36px; padding: 6px 13px; font-size: .68rem; }
+}
+/* Reduced motion: no flashing; arrows and label stay lit and still */
+@media (prefers-reduced-motion: reduce) {
+  .donate-label, .donate-chevs i { animation: none !important; opacity: 1; }
+  .donate-fill, .donate-pill { transition: none !important; }
+}

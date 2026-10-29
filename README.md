@@ -23,6 +23,8 @@ streaming.html           Stream schedule, what the stream is, what to expect, Wa
 beginner-guide.html, automation-guides.html, consulting.html, merch.html, 404.html
 robots.txt, _headers     Optional Cloudflare Pages extras
 assets/css/style.css     All styling and theme variables
+assets/css/donate.css    Donate section + sticky Donate pill (homepage)
+assets/js/donate.js      Donate progress bar: goal/raised config at the top of the file
 assets/js/main.js        Nav, obfuscated mailto, event auto-hide, Twitch player loader
 assets/js/greeter.js     Mini Zero greeter (home only): bubble, search, quick buttons, voice, hover/click jokes, animated loop
 assets/img/              Logo, avatar, Mini Zero still (mini-zero.webp) and loop (mini-zero-loop.webm / .webp)
@@ -40,6 +42,13 @@ assets/fonts/            Russo One + Inter (woff2)
 The homepage form posts straight to **Web3Forms** (`https://api.web3forms.com/submit`) from `assets/js/home-extras.js`. The access key in the hidden `access_key` field in `index.html` is public by design, so it is fine in the HTML. Submissions are emailed to the address the key was created for; nothing is published automatically. The form has a hidden `website` field and a hidden `botcheck` checkbox as spam traps. There is no server code or secret for this form. To change the receiving address, create a new key at web3forms.com and replace the `access_key` value.
 
 Pages Function `functions/api/products.js` (merch grid) still needs the env var `FOURTHWALL_STOREFRONT_TOKEN`.
+
+## Donate section (homepage)
+The "Support the Wounded Warrior Project" section sits right after the hero (`#donate` in `index.html`), with a small sticky "Donate" pill that links to it. Code: `assets/css/donate.css`, `assets/js/donate.js`.
+- **The goal is $3,000** (set by Brook); change `DONATE.goal` if it moves.
+- **The raised amount is NOT connected to anything (it starts at $0 as a placeholder) and must be updated by hand.** Edit `DONATE.goal` and `DONATE.raised` at the top of `assets/js/donate.js` (the only place the numbers live), or connect a live tracker later. Never enter a number that has not been confirmed.
+- The main button goes to https://www.woundedwarriorproject.org. The pill and the stream line hide after Oct 31, 2026 (same `data-event` switch as the event bar); the thank-you line replaces the stream line.
+- Arrows flash with CSS only and stop under `prefers-reduced-motion`.
 
 ## Schedule and event
 Central time: Fri 8 PM; Sat 9 AM and 7 PM; Sun 9 AM and 7 PM (no Sunday stream on kid weekends). The WWP charity stream banner/cards (anything with `data-event`) hide themselves automatically after Oct 31, 2026 (`EVENT_END` in `main.js`).
@@ -82,3 +91,7 @@ Because the domain is already registered on Cloudflare, DNS is handled for you:
 - Replace placeholder copy (search `TODO`), add the real stream schedule, pricing/contact, Mini Zero art, product links.
 - Review the Twitch player on the live domain (Twitch requires the page hostname as `parent`; `main.js` sets it automatically).
 - Review the WWP callout (home + streaming) after the Oct 30 event; WWP copy rules: "benefiting Wounded Warrior Project" only, no dollar/percent claims, no merch tie-in.
+
+## Photos of Brook
+
+Real cutouts live in `assets/img/` as a `.webp` plus a `.png` fallback, served through `<picture>`: `brook-headshot` (homepage About Me), `brook-consulting` (consulting.html, pricing card, round crop) and `brook-stream` (streaming.html, "What the stream is"). The shared frame style is `.bio-photo` / `.about-avatar` in `assets/css/style.css`.

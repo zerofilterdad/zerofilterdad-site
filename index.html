@@ -21,10 +21,14 @@
 <link rel="preload" href="assets/fonts/Inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/style.css">
 <link rel="stylesheet" href="assets/css/home-extras.css?v=1">
+<link rel="stylesheet" href="assets/css/merch-grid.css?v=1">
+<link rel="stylesheet" href="assets/css/donate.css?v=1">
 <script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/greeter.js" defer></script>
 <script src="assets/js/home-extras.js?v=1" defer></script>
+<script src="assets/js/merch-grid.js?v=1" defer></script>
+<script src="assets/js/donate.js?v=1" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -54,6 +58,7 @@
   </div>
 </div>
 <!-- TODO: event bar appears on every page and hides itself after Oct 31, 2026 (see EVENT_END in assets/js/main.js). Times are in CT, not CST: daylight time is in effect Oct 30. -->
+<a class="donate-pill" id="donate-pill" href="#donate" data-event>Donate</a>
 <main id="main">
 <div class="hero">
   <div class="wrap split">
@@ -64,7 +69,6 @@
       <div class="cta-row">
         <a class="cta primary" href="beginner-guide.html">Start Here</a>
       </div>
-      <p class="todo">TODO: hero headline and subline are Brook-approved copy. The greeter welcome line and answers are placeholder copy (assets/js/greeter.js).</p>
     </div>
     <div class="hero-art-wrap">
 <div class="greeter" id="greeter" data-audio="1">
@@ -107,10 +111,39 @@
   </div>
 </div>
 
+<!-- DONATE SECTION. The $3,000 goal was set by Brook. The "raised" amount is NOT connected to anything and is a hand-entered placeholder.
+     Update it by hand in the DONATE config at the top of assets/js/donate.js (goal and raised), or connect a live tracker later.
+     Do not enter a number that has not been confirmed. -->
+<section id="donate" class="donate" aria-labelledby="donate-h">
+  <div class="wrap">
+    <div class="donate-card">
+      <p class="eyebrow">ZeroFilterDad Gives Back</p>
+      <h2 id="donate-h" class="chrome">Support the Wounded Warrior Project</h2>
+      <p class="donate-when" data-event>Join the WWP charity stream on <time data-ts="2026-10-30T19:30:00-05:00">Friday, Oct 30 at 7:30 PM Central</time>.</p>
+      <p class="donate-when" data-event-over hidden>Thank you for showing up for the Wounded Warrior Project charity stream.</p>
+      <div class="donate-cta">
+        <div class="donate-pointer">
+          <p class="donate-gives">Zero Filter Dad Gives Back</p>
+          <div class="donate-arrows" aria-hidden="true">
+            <span class="donate-label">Donate Here</span>
+            <span class="donate-chevs"><i></i><i></i><i></i></span>
+          </div>
+        </div>
+        <a class="cta primary donate-btn" href="https://www.woundedwarriorproject.org" target="_blank" rel="noopener">Donate to Wounded Warrior Project<span class="sr-only"> (opens in a new tab)</span></a>
+      </div>
+      <div class="donate-progress" data-donate-progress hidden>
+        <p class="donate-stat" data-donate-text></p>
+        <div class="donate-bar" role="progressbar" aria-label="Donation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><span class="donate-fill"></span></div>
+        <p class="donate-note">Progress is updated by hand, so it can lag behind the latest donations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section id="about" aria-labelledby="about-h">
   <div class="wrap">
     <div class="card accent about-card">
-      <img class="about-avatar" src="assets/img/avatar-stylized.png" width="160" height="160" loading="lazy" decoding="async" alt="Stylized avatar of Brook, the ZeroFilterDad host">
+      <picture><source srcset="assets/img/brook-headshot.webp" type="image/webp"><img class="about-avatar" src="assets/img/brook-headshot.png" width="604" height="819" loading="lazy" decoding="async" alt="Brook, ZeroFilterDad"></picture>
       <div>
         <h2 id="about-h" class="chrome">About me</h2>
         <p class="lead">I'm a 46-year-old dad with a lifetime of real-world experience. Streaming since 2024, and in that time I've built my own OBS apps, automated my editing and clip workflow, and turned the whole thing into something that actually runs. I'm not an expert with all the answers. I'm the guy next to you who's a few steps ahead and happy to share what he's learned.</p>
@@ -253,12 +286,8 @@
 <section id="merch" aria-labelledby="merch-h">
   <div class="wrap">
     <div class="section-head"><p class="eyebrow">Official shop</p><h2 id="merch-h" class="chrome">Merch</h2><p>ZFD gear from the official shop on Fourthwall.</p></div>
-    <div class="grid c4">
-      <!-- TODO: placeholder product tiles. Replace with real product images + deep links. Do not invent prices. -->
-      <a class="card product" href="https://zerofilterdad-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer"><div class="slot" role="img" aria-label="Product image placeholder">Product image</div><h3>Hoodie</h3><span class="more">View in shop<span class="sr-only"> (opens in a new tab)</span></span></a>
-      <a class="card product" href="https://zerofilterdad-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer"><div class="slot" role="img" aria-label="Product image placeholder">Product image</div><h3>Hat</h3><span class="more">View in shop<span class="sr-only"> (opens in a new tab)</span></span></a>
-      <a class="card product" href="https://zerofilterdad-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer"><div class="slot" role="img" aria-label="Product image placeholder">Product image</div><h3>Tee</h3><span class="more">View in shop<span class="sr-only"> (opens in a new tab)</span></span></a>
-      <a class="card product" href="https://zerofilterdad-shop.fourthwall.com/" target="_blank" rel="noopener noreferrer"><div class="slot" role="img" aria-label="Product image placeholder">Product image</div><h3>Stickers &amp; drinkware</h3><span class="more">View in shop<span class="sr-only"> (opens in a new tab)</span></span></a>
+    <div class="grid c4 fw-grid" data-live-products>
+      <!-- Live products load here from /api/products (Cloudflare Pages Function), same grid as merch.html. -->
     </div>
     <div class="trust" role="list">
       <div role="listitem"><b>Official</b> shop on Fourthwall</div>
