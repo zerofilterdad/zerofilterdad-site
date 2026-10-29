@@ -19,9 +19,10 @@
 <meta name="twitter:site" content="@Zerofilterdad">
 <link rel="preload" href="assets/fonts/RussoOne-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/Inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/style.css?v=2">
 <script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
 <script src="assets/js/main.js" defer></script>
+<script src="assets/js/live-status.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -32,8 +33,7 @@
       <span>ZeroFilterDad</span>
     </a>
     <div class="nav-wrap">
-      <!-- TODO: the Live badge is a static link to Twitch (it does not know if Brook is live). Wire it to Twitch's live status later, or show it only during scheduled stream windows. -->
-      <a class="live-badge" href="https://www.twitch.tv/zerofilterdad" target="_blank" rel="noopener noreferrer"><i aria-hidden="true"></i><span class="lb-w">Watch </span>live<span class="sr-only"> (opens in a new tab)</span></a>
+      <a class="live-badge is-offline" href="https://www.twitch.tv/zerofilterdad" target="_blank" rel="noopener noreferrer"><i aria-hidden="true"></i><span class="lb-label">Offline</span><span class="sr-only"> (opens in a new tab)</span></a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-list">Menu</button>
       <nav aria-label="Main"><ul class="nav-list" id="nav-list"><li><a href="streaming.html">Stream</a></li><li><a href="beginner-guide.html" aria-current="page">Guides</a></li><li><a href="automation-guides.html">Automation</a></li><li><a href="consulting.html">Work With Me</a></li><li><a href="merch.html">Merch</a></li><li><a href="index.html#give-back">Give Back</a></li></ul></nav>
     </div>

@@ -133,12 +133,19 @@ p + p { margin-top: 1em; }
 .nav-list a[aria-current="page"] { color: var(--white); border-bottom-color: var(--blue-glow); }
 .live-badge {
   display: inline-flex; align-items: center; gap: 8px; padding: 8px 12px; border-radius: 999px; text-decoration: none;
-  font: 800 .72rem/1 var(--font-body); letter-spacing: .14em; text-transform: uppercase;
-  color: var(--white); border: 1px solid var(--line-blue); background: rgba(0, 168, 255, .1); min-height: 36px;
+  font: 800 .72rem/1 var(--font-body); letter-spacing: .08em; text-transform: none;
+  color: #8d939c; border: 1px solid rgba(141, 147, 156, .55); background: rgba(141, 147, 156, .08); min-height: 36px;
+  box-shadow: 0 0 0 2px rgba(141, 147, 156, .7);
 }
-.live-badge:hover { color: var(--white); box-shadow: var(--glow); }
-.live-badge i { width: 8px; height: 8px; border-radius: 50%; background: #ff3b4a; box-shadow: 0 0 0 0 rgba(255, 59, 74, .7); animation: pulse 2s infinite; }
-@keyframes pulse { 70% { box-shadow: 0 0 0 7px rgba(255, 59, 74, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 59, 74, 0); } }
+.live-badge:hover { color: #c5cad1; box-shadow: 0 0 0 2px rgba(141, 147, 156, .7); }
+.live-badge i { width: 8px; height: 8px; border-radius: 50%; background: #6e747c; box-shadow: none; animation: none; }
+.live-badge.is-live {
+  color: #22e55b; border-color: #22e55b; background: rgba(34, 229, 91, .12);
+  box-shadow: 0 0 0 2px #22e55b, 0 0 16px rgba(34, 229, 91, .55);
+}
+.live-badge.is-live:hover { color: #22e55b; box-shadow: 0 0 0 2px #22e55b, 0 0 18px rgba(34, 229, 91, .7); }
+.live-badge.is-live i { background: #22e55b; box-shadow: 0 0 0 0 rgba(34, 229, 91, .7); animation: livepulse 2s infinite; }
+@keyframes livepulse { 70% { box-shadow: 0 0 0 7px rgba(34, 229, 91, 0); } 100% { box-shadow: 0 0 0 0 rgba(34, 229, 91, 0); } }
 .nav-toggle {
   display: none; min-width: 48px; min-height: 44px; border-radius: var(--radius); cursor: pointer; padding: 0 14px;
   background: transparent; color: var(--white); border: 1px solid var(--line-blue);
@@ -429,7 +436,6 @@ ol.steps li span { color: var(--body); }
 .hero-art-wrap { min-width: 0; }
 
 @media (max-width: 520px) {
-  .lb-w { display: none; }
   .nav-row { gap: 8px; }
   .brand span { font-size: .88rem; }
   .brand img { width: 34px; height: 34px; }
