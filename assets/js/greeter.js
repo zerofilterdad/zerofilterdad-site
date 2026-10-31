@@ -25,7 +25,6 @@
   var muteBtn = document.getElementById('mz-mute');
   var hearBtn = document.getElementById('mz-hear');
   var hint = document.getElementById('mz-hint');
-  var eventOn = !(window.ZFD && window.ZFD.eventActive === false);
 
   function ss(k, v) { try { if (v === undefined) { return sessionStorage.getItem(k); } sessionStorage.setItem(k, v); } catch (e) {} return null; }
   function ls(k, v) { try { if (v === undefined) { return localStorage.getItem(k); } localStorage.setItem(k, v); } catch (e) {} return null; }
@@ -39,11 +38,9 @@
     automation:{ href: '#automation', label: 'See the Automation guides', audio: 'automation', text: "Automation. Work smarter, not harder. Look right here." },
     consulting:{ href: '#consulting', label: 'Work with me', audio: 'consulting', text: "Need a hand? Book a call, contact for pricing." },
     merch:     { href: '#merch', label: 'Shop merch', audio: 'merch', text: "Merch. Look sharp. The shelf is right here." },
-    wwp:       { href: '#give-back', label: 'See the charity stream', audio: 'wwp', text: "Charity stream Fri Oct 30: starts 7:30 PM CT, DJ Cyber Sentinel joins at 8 PM CT. If you'd like to give, Twitch's charity feature or the WWP page both work." },
+    wwp:       { href: '#give-back', label: 'See Give Back', audio: '', text: "Giving back to Wounded Warrior Project. You can still donate on the campaign page." },
     fallback:  { href: null, label: '', audio: 'fallback', text: "Hmm, not sure. Try one of these!" }
   };
-  if (!eventOn) { DEST.wwp.text = "Giving back to Wounded Warrior Project. Details are right here."; }
-
   /* ---------- Search: synonym map (weight 2 = strong word, 1 = weak) ---------- */
   var SYN = {
     schedule: { 2: ['schedule', 'when', 'times', 'calendar', 'weekend', 'weekends', 'saturday', 'sunday', 'friday', 'hours', 'timetable'], 1: ['time', 'live', 'tonight', 'today'] },

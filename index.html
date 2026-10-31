@@ -19,17 +19,17 @@
 <meta name="twitter:site" content="@Zerofilterdad">
 <link rel="preload" href="assets/fonts/RussoOne-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/Inter-var-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=3">
-<link rel="stylesheet" href="assets/css/home-extras.css?v=1">
+<link rel="stylesheet" href="assets/css/style.css?v=4">
+<link rel="stylesheet" href="assets/css/home-extras.css?v=2">
 <link rel="stylesheet" href="assets/css/merch-grid.css?v=1">
 <link rel="stylesheet" href="assets/css/donate.css?v=1">
 <script>document.documentElement.className = document.documentElement.className.replace('no-js','js');</script>
 <script src="assets/js/main.js" defer></script>
 <script src="assets/js/live-status.js" defer></script>
-<script src="assets/js/greeter.js?v=3" defer></script>
+<script src="assets/js/greeter.js?v=4" defer></script>
 <script src="assets/js/home-extras.js?v=1" defer></script>
 <script src="assets/js/merch-grid.js?v=1" defer></script>
-<script src="assets/js/donate.js?v=1" defer></script>
+<script src="assets/js/donate.js?v=2" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -46,18 +46,6 @@
     </div>
   </div>
 </header>
-<div class="event-bar" id="event-bar" data-event>
-  <div class="wrap">
-    <p class="msg"><span class="tagpill">Charity stream</span>
-      <strong>Wounded Warrior Project</strong>
-      <span><time data-ts="2026-10-30T19:30:00-05:00">Fri, Oct 30 &middot; 7:30 PM CT</time> &middot; DJ Cyber Sentinel joins at <time data-ts="2026-10-30T20:00:00-05:00">8 PM CT</time></span></p>
-    <div class="acts">
-      <a class="cta primary small" href="https://communityfundraising.woundedwarriorproject.org/campaigns/zerofilterdad-gives-back" target="_blank" rel="noopener noreferrer">Donate directly on WWP<span class="sr-only"> (opens in a new tab)</span></a>
-      <a class="cta small" href="https://www.twitch.tv/zerofilterdad" target="_blank" rel="noopener noreferrer">Watch on Twitch<span class="sr-only"> (opens in a new tab)</span></a>
-    </div>
-  </div>
-</div>
-<!-- TODO: event bar appears on every page and hides itself after Oct 31, 2026 (see EVENT_END in assets/js/main.js). Times are in CT, not CST: daylight time is in effect Oct 30. -->
 <a class="donate-pill" id="donate-pill" href="#donate" data-event>Donate</a>
 <main id="main">
 <div class="hero">
@@ -111,15 +99,16 @@
   </div>
 </div>
 
-<!-- DONATE SECTION. The $3,000 goal was set by Brook. The "raised" amount is NOT connected to anything and is a hand-entered placeholder.
-     Update it by hand in the DONATE config at the top of assets/js/donate.js (goal and raised), or connect a live tracker later.
-     Do not enter a number that has not been confirmed. -->
+<!-- DONATE SECTION. The $3,000 goal was set by Brook. "raised" is hand-entered, not a live tracker.
+     Update it in the DONATE config at the top of assets/js/donate.js. Do not enter a number that has not been confirmed.
+     Confirmed 2026-10-31: $195 raised, from the public campaign page
+     https://communityfundraising.woundedwarriorproject.org/campaigns/zerofilterdad-gives-back
+     (participant 28934, sumDonations). -->
 <section id="donate" class="donate" aria-labelledby="donate-h">
   <div class="wrap">
     <div class="donate-card">
       <p class="eyebrow">ZeroFilterDad Gives Back</p>
       <h2 id="donate-h" class="chrome">Support the Wounded Warrior Project</h2>
-      <p class="donate-when" data-event>Join the WWP charity stream on <time data-ts="2026-10-30T19:30:00-05:00">Friday, Oct 30 at 7:30 PM Central</time>.</p>
       <p class="donate-when" data-event-over hidden>Thank you for showing up for the Wounded Warrior Project charity stream.</p>
       <div class="donate-cta">
         <div class="donate-pointer">
@@ -132,8 +121,8 @@
         <a class="cta primary donate-btn" href="https://communityfundraising.woundedwarriorproject.org/campaigns/zerofilterdad-gives-back" target="_blank" rel="noopener">Donate to Wounded Warrior Project<span class="sr-only"> (opens in a new tab)</span></a>
       </div>
       <div class="donate-progress" data-donate-progress>
-        <p class="donate-stat" data-donate-text>$0 raised of $3,000 goal</p>
-        <div class="donate-bar" role="progressbar" aria-label="Donation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-valuetext="$0 raised of $3,000 goal"><span class="donate-fill"></span></div>
+        <p class="donate-stat" data-donate-text>$195 raised of $3,000 goal</p>
+        <div class="donate-bar" role="progressbar" aria-label="Donation progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="7" aria-valuetext="$195 raised of $3,000 goal"><span class="donate-fill"></span></div>
         <p class="donate-note">Progress is updated by hand, so it can lag behind the latest donations.</p>
       </div>
     </div>
@@ -149,6 +138,17 @@
         <p class="lead">I'm a 46-year-old dad with a lifetime of real-world experience. Streaming since late 2025, and in that time I've built my own OBS apps, automated my editing and clip workflow, and turned the whole thing into something that actually runs. I'm not an expert with all the answers. I'm the guy next to you who's a few steps ahead and happy to share what he's learned.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="hub-follow" aria-labelledby="hub-h">
+  <div class="wrap">
+    <a class="card accent hub-card" href="https://zerofilterdad.vercel.app" target="_blank" rel="noopener noreferrer">
+      <span class="num">Links</span>
+      <h2 id="hub-h" class="chrome">Zero Filter Dad links</h2>
+      <p class="lead">Streams, socials, the shop, and the Wounded Warrior Project fundraiser.</p>
+      <span class="more">Open the link page<span class="sr-only"> (opens in a new tab)</span> &rsaquo;</span>
+    </a>
   </div>
 </section>
 
@@ -261,18 +261,10 @@
     <div class="wwp">
       <p class="eyebrow">ZeroFilterDad Gives Back</p>
       <h2 id="h-wwp" class="chrome">Streaming to benefit Wounded Warrior Project</h2>
-      <div data-event>
-        <p class="when">Fri, Oct 30, 2026 &middot; <time data-ts="2026-10-30T19:30:00-05:00">7:30 PM CT</time></p>
-        <p style="margin-top:8px"><strong style="color:var(--white)">DJ Cyber Sentinel</strong> joins the stream at <time data-ts="2026-10-30T20:00:00-05:00">8 PM CT</time>.</p>
-        <p style="margin-top:14px;max-width:62ch">Watch live on Twitch and donate right there with Twitch&rsquo;s built-in charity feature. Prefer to give outside Twitch? Donate directly on the Wounded Warrior Project campaign page.</p>
-      </div>
-      <div data-event-over hidden>
-        <p style="margin-top:14px;max-width:62ch">Thank you for showing up for Wounded Warrior Project. You can still give directly through the campaign page.</p>
-      </div>
-      <!-- TODO: WWP copy rules (Brook's notes): say "benefiting Wounded Warrior Project"; never show a dollar amount, percentage or share of sales; no merch tie-in; no WWP logo until WWP approves. Event details hide automatically after Oct 31, 2026; the thank-you line replaces them. -->
+      <p style="margin-top:14px;max-width:62ch">Thank you for showing up for Wounded Warrior Project. You can still give directly through the campaign page.</p>
+      <!-- TODO: WWP copy rules (Brook's notes): say "benefiting Wounded Warrior Project"; never show a dollar amount, percentage or share of sales; no merch tie-in; no WWP logo until WWP approves. -->
       <div class="cta-row">
         <a class="cta primary" href="https://communityfundraising.woundedwarriorproject.org/campaigns/zerofilterdad-gives-back" target="_blank" rel="noopener noreferrer">Donate directly on WWP<span class="sr-only"> (opens in a new tab)</span></a>
-        <a class="cta" href="https://www.twitch.tv/zerofilterdad" target="_blank" rel="noopener noreferrer" data-event>Join on Twitch<span class="sr-only"> (opens in a new tab)</span></a>
       </div>
     </div>
   </div>

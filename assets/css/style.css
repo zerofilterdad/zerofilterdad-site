@@ -330,21 +330,11 @@ ol.steps li span { color: var(--body); }
 .foot-legal { margin-top: 36px; padding-top: 20px; border-top: 1px solid var(--line); font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
 
 /* ==========================================================================
-   v2 additions: event bar, schedule, greeter (Mini Zero), misc
+   v2 additions: schedule, greeter (Mini Zero), misc
    ========================================================================== */
 .js-only { display: none; }
 .js .js-only { display: block; }
 
-/* Event bar (WWP charity stream). Hidden automatically after Oct 31, 2026 by main.js */
-.event-bar {
-  background: linear-gradient(90deg, rgba(24, 97, 221, .45), rgba(10, 12, 16, .95) 70%);
-  border-bottom: 1px solid var(--line-blue);
-}
-.event-bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 14px 24px; flex-wrap: wrap; padding-top: 12px; padding-bottom: 12px; }
-.event-bar .msg { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; font-size: .92rem; color: var(--white); }
-.event-bar .msg strong { font: 400 1rem var(--font-heading); letter-spacing: .04em; text-transform: uppercase; }
-.event-bar .tagpill { font: 800 .68rem/1 var(--font-body); letter-spacing: .16em; text-transform: uppercase; color: var(--on-blue); background: var(--blue-light); padding: 6px 9px; border-radius: 3px; }
-.event-bar .acts { display: flex; gap: 10px; flex-wrap: wrap; }
 .local { color: var(--silver); font-weight: 500; }
 
 /* Schedule */
@@ -430,10 +420,6 @@ ol.steps li span { color: var(--body); }
   .mz-ask .row { flex-wrap: wrap; }
   .mz-ask input { flex: 1 1 100%; }
   .mz-ask button { flex: 1 1 100%; }
-  .event-bar .local { display: none; }
-  .event-bar .wrap { padding-top: 10px; padding-bottom: 10px; }
-  .event-bar .acts { gap: 8px; }
-  .event-bar .msg strong { font-size: .9rem; }
 }
 @media (prefers-reduced-motion: reduce) {
   .mz-char.idle, .mz-char.enter, .mz-glow, .live-badge i, .mz-tap { animation: none !important; }

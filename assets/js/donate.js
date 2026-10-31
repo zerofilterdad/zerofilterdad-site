@@ -1,12 +1,15 @@
 /* Donate section: progress bar + sticky pill (homepage).
    ==========================================================================
    EDIT THESE TWO NUMBERS (the only place they live):
-   The goal ($3,000) was set by Brook. "raised" is NOT connected to anything:
-   it is a hand-entered placeholder. Update it by hand, or connect a live
-   tracker later. Do not enter a number that has not been confirmed. */
+   The goal ($3,000) was set by Brook. "raised" is hand-entered and is not
+   connected to a live tracker. Update it by hand. Do not enter a number
+   that has not been confirmed.
+   Confirmed 2026-10-31 from the public campaign page
+   https://communityfundraising.woundedwarriorproject.org/campaigns/zerofilterdad-gives-back
+   (DonorDrive participant 28934, sumDonations: 195). */
 var DONATE = {
   goal: 3000,   // goal set by Brook, in US dollars
-  raised: 0     // update by hand
+  raised: 195   // confirmed 2026-10-31 from the WWP campaign page
 };
 
 (function () {

@@ -35,3 +35,20 @@
 .faq summary:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; border-radius: var(--radius); }
 .faq .ans { padding: 0 22px 20px; }
 .faq .ans p + p { margin-top: 10px; }
+
+/* Link card directly under About Me. Same accent card as the front-page cards,
+   with the soft blue glow used on the hero-adjacent donate panel. */
+.hub-follow { padding-top: 22px; }
+.hub-card {
+  padding: 32px;
+  background:
+    radial-gradient(70% 140% at 0% 0%, rgba(0, 168, 255, .18), transparent 62%),
+    var(--panel);
+  box-shadow: 0 0 28px rgba(0, 168, 255, .16);
+}
+.hub-card h2 { font-size: clamp(1.45rem, 3vw, 2rem); margin-bottom: 12px; }
+.hub-card .lead { margin-top: 0; }
+.hub-card .more { margin-top: 18px; }
+@media (max-width: 640px) {
+  .hub-card { padding: 24px; }
+}
