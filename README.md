@@ -46,12 +46,12 @@ Pages Function `functions/api/products.js` (merch grid) still needs the env var 
 ## Donate section (homepage)
 The "Support the Wounded Warrior Project" section sits right after the hero (`#donate` in `index.html`), with a small sticky "Donate" pill that links to it. Code: `assets/css/donate.css`, `assets/js/donate.js`.
 - **The goal is $3,000** (set by Brook); change `DONATE.goal` if it moves.
-- **The raised amount is NOT connected to anything (it starts at $0 as a placeholder) and must be updated by hand.** Edit `DONATE.goal` and `DONATE.raised` at the top of `assets/js/donate.js` (the only place the numbers live), or connect a live tracker later. Never enter a number that has not been confirmed.
-- The main button goes to https://www.woundedwarriorproject.org. The pill and the stream line hide after Oct 31, 2026 (same `data-event` switch as the event bar); the thank-you line replaces the stream line.
+- **The raised amount is NOT connected to a live tracker and must be updated by hand.** Edit `DONATE.goal` and `DONATE.raised` at the top of `assets/js/donate.js` (the only place the numbers live). Never enter a number that has not been confirmed. As of 2026-10-31 the confirmed total is **$195**, read from the public campaign page (DonorDrive participant 28934, `sumDonations`).
+- The main button goes to the WWP campaign page. The sticky Donate pill hides after Oct 31, 2026. The Oct 30 charity-stream banner and the "join the stream" line have been removed.
 - Arrows flash with CSS only and stop under `prefers-reduced-motion`.
 
 ## Schedule and event
-Central time: Fri 8 PM; Sat 9 AM and 7 PM; Sun 9 AM and 7 PM. On kid weekends, Sunday is a pop-up stream with no set time. The WWP charity stream banner/cards (anything with `data-event`) hide themselves automatically after Oct 31, 2026 (`EVENT_END` in `main.js`).
+Central time: Fri 8 PM; Sat 9 AM and 7 PM; Sun 9 AM and 7 PM. On kid weekends, Sunday is a pop-up stream with no set time. The Oct 30, 2026 charity-stream banner has been removed. The sticky Donate pill (`data-event`) still hides after Oct 31, 2026 (`EVENT_END` in `main.js`).
 
 ## Contact
 All contact points to **hello@zerofilterdad.com**. That mailbox does not exist yet: set up Cloudflare Email Routing (forward to a real inbox) or a mailbox before launch. Consulting pricing reads "Contact for pricing".

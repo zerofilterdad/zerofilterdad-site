@@ -4,8 +4,9 @@
   var root = document.documentElement;
   root.classList.remove('no-js'); root.classList.add('js');
 
-  /* ---- Event window: the WWP charity stream banner hides itself after Oct 31, 2026 (Central) ----
-     Nov 1, 2026 00:00 is still CDT (UTC-5). Elements with [data-event] are hidden once the window closes. */
+  /* ---- Event window: the Oct 30, 2026 charity-stream banner is gone.
+     Anything still marked [data-event] (the donate pill) hides after Oct 31, 2026 (Central).
+     Nov 1, 2026 00:00 is still CDT (UTC-5). [data-event-over] is shown once the window closes. */
   var EVENT_END = Date.parse('2026-11-01T00:00:00-05:00');
   var eventActive = Date.now() < EVENT_END;
   window.ZFD = { eventActive: eventActive };
