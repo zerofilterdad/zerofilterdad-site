@@ -20,9 +20,15 @@ Fonts are self-hosted in `assets/fonts/`: **Russo One** for headings (chrome gra
 ```
 index.html               Home (hero, About me, proof strip, intent cards, ... Mini Zero, newsletter)
 streaming.html           Stream schedule, what the stream is, what to expect, Watch on Twitch
-beginner-guide.html, automation-guides.html, consulting.html, merch.html, 404.html
+guides.html              Guides catalog (nav "Guides"): free Beginner guide + paid Startup guide (Coming Soon)
+beginner-guide.html      Free Beginner Streaming Guide: outline + PDF download
+startup-guide.html       Paid Complete Streamer Startup Guide: preview only, Coming Soon, no purchase link
+automation-guides.html   Automation catalog (nav "Automation"): every item Coming Soon
+consulting.html, merch.html, 404.html
 robots.txt, _headers     Optional Cloudflare Pages extras
 assets/css/style.css     All styling and theme variables
+assets/css/catalog.css   Product cards for the guide catalog pages (uses the style.css variables)
+assets/guides/           Downloadable guide PDFs (the approved free guide goes here)
 assets/css/donate.css    Donate section + sticky Donate pill (homepage)
 assets/js/donate.js      Donate progress bar: goal/raised config at the top of the file
 assets/js/main.js        Nav, obfuscated mailto, event auto-hide, Twitch player loader
@@ -31,6 +37,13 @@ assets/img/              Logo, avatar, Mini Zero still (mini-zero.webp) and loop
 assets/audio/            Mini Zero voice clips (mz-*.mp3)
 assets/fonts/            Russo One + Inter (woff2)
 ```
+
+## Product catalog (Guides and Automation)
+`guides.html` and `automation-guides.html` are the catalog. Each product is one `<article class="card pcard">` card.
+- **Free guide file:** the download buttons point to `assets/guides/zerofilterdad-free-beginner-streaming-guide-v1.0.pdf`. The PDF must be uploaded to `assets/guides/` with exactly that name, or the buttons 404. For a new version, upload it under a new file name and update the three links (`guides.html` x1, `beginner-guide.html` x2); `/assets/*` is cached for a year, so never overwrite a PDF in place.
+- **Unreleased products stay Coming Soon:** `pill soon` label, `Price: TBD`, and a non-clickable `<span class="cta small is-soon">Coming soon</span>`. There are no purchase links anywhere yet.
+- **Releasing a paid product:** only when Brook supplies the real Fourthwall listing URL. Search for `PURCHASE LINK` to find each spot, swap the Coming Soon span for the buy link shown in the comment in `startup-guide.html`, set the real price, and change the pills. Never guess a listing URL or a price.
+- The paid guide's outline, price and cover art are still TODO (dashed PLACEHOLDER box on `startup-guide.html`).
 
 ## Mini Zero greeter
 - Entrance once per session; dismissible; mute is remembered (localStorage `mzMuted`); welcome voice plays once per visit and only after a user gesture.
