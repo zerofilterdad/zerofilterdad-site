@@ -1,0 +1,30 @@
+/* Product catalog (guides.html, automation-guides.html and the guide product pages).
+   Uses the site's CSS variables from style.css. No new colors or fonts. */
+
+/* Product card: same .card panel, with the price and button pinned to the bottom so rows line up. */
+.pcard { display: flex; flex-direction: column; }
+.pcard .pmeta { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+.pcard h3 { font-size: 1.25rem; line-height: 1.2; }
+.pcard .facts { margin-top: 16px; font-size: .9rem; color: var(--silver); }
+.pcard .facts li { color: var(--silver); }
+.pcard .pfoot { margin-top: auto; padding-top: 20px; }
+.pcard .price { margin: 0; }
+.pcard .cta-row { margin-top: 14px; gap: 10px; }
+
+/* Status pills. "Coming soon" reuses .pill.soon from style.css. */
+.pill.free { color: var(--on-blue); background: var(--blue-glow); border-color: var(--blue-light); }
+
+/* Unreleased products: quieter panel, and the placeholder button is not clickable. */
+.pcard.is-soon { border-style: dashed; }
+.cta.is-soon { opacity: .65; cursor: not-allowed; box-shadow: none; border-color: rgba(185, 193, 204, .5); color: var(--silver); }
+.cta.is-soon:hover { background: transparent; box-shadow: none; color: var(--silver); }
+
+/* "All guides" link above a product page title */
+.back-link { display: inline-block; margin-bottom: 18px; font-weight: 800; font-size: .78rem; letter-spacing: .14em; text-transform: uppercase; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+
+/* Small print under a button row */
+.fineprint { margin-top: 14px; font-size: .85rem; color: var(--silver); }
+
+/* 12-section outline: two columns on wide screens */
+@media (min-width: 900px) { ol.steps.two-col { grid-template-columns: 1fr 1fr; } }
