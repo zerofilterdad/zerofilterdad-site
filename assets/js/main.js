@@ -86,15 +86,10 @@
     });
   }
 
-  /* ---- Email capture (placeholder): no backend yet, so the form only shows a message.
-     TODO: set data-endpoint on the form (Beehiiv / Mailchimp / Formspree URL) and POST to it here. ---- */
-  document.querySelectorAll('form.signup').forEach(function (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      var note = form.parentNode.querySelector('.signup-note');
-      if (note) { note.textContent = 'Signup opens soon. Check back, or follow on Twitch or TikTok for the drop.'; }
-    });
-  });
+  /* TODO: when a mailing list is connected (Beehiiv / Mailchimp / Formspree),
+     restore the email signup forms on the homepage and beginner guide,
+     and POST submissions to the list endpoint here.
+     Until then, those pages use Follow on Twitch / YouTube links instead. */
 
   /* ---- Twitch player: loads on click. "parent" must be the site's hostname. ---- */
   var btn = document.getElementById('load-player');
