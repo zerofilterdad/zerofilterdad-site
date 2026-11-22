@@ -496,3 +496,8 @@ ol.steps li span { color: var(--body); }
   .top-clip { min-width: 0; }
   .top-clip { max-width: 380px; width: 100%; margin: 0 auto; }
 }
+
+/* Legal pages (privacy, terms) */
+.legal { max-width: 68ch; padding: 0 0 var(--section); color: var(--body); }
+.legal h2 { font-family: var(--font-body); font-size: 1.05rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; margin: 2rem 0 .7rem; color: var(--white); }
+.legal p { line-height: 1.7; }
