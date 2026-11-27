@@ -36,7 +36,7 @@ assets/fonts/            Russo One + Inter (woff2)
 - Entrance once per session; dismissible; mute is remembered (localStorage `mzMuted`); welcome voice plays once per visit and only after a user gesture.
 - Hover, keyboard focus or first touch tap: cap tip + "Hey, how you doin'?" (throttled to once per 10 s). Click or Enter: a random joke from 9 clean lines, no repeat until all nine are used (the list is `JOKES` in `greeter.js`, audio `mz-joke1..9.mp3` in the same order).
 - Voice clips are mono MP3s (about 12-25 KB each) in the approved Mini Zero voice. They are fetched only when played, after the first interaction. Clips were made with the voice description in the promo standard (never the old Piper voice); to change a line, regenerate the clip with the same voice and keep the file name.
-- Animation: `assets/img/mini-zero-loop.webm` (VP9 with alpha, about 403 KB) is loaded after the page `load` event on top of the `mini-zero.webp` still. Safari/iOS get `mini-zero-loop.webp` (animated WebP, about 460 KB). `prefers-reduced-motion` keeps the still only. No WebGL.
+- Animation: `assets/img/mini-zero-loop.webm` (VP9 with alpha, about 403 KB) is fetched only after the mascot is in (or near) the viewport, on top of the `mini-zero.webp` still. Safari/iOS get `mini-zero-loop.webp` (animated WebP, about 460 KB). `prefers-reduced-motion` keeps the still only. No WebGL.
 
 ## Testimonial form
 The homepage form posts straight to **Web3Forms** (`https://api.web3forms.com/submit`) from `assets/js/home-extras.js`. The access key in the hidden `access_key` field in `index.html` is public by design, so it is fine in the HTML. Submissions are emailed to the address the key was created for; nothing is published automatically. The form has a hidden `website` field and a hidden `botcheck` checkbox as spam traps. There is no server code or secret for this form. To change the receiving address, create a new key at web3forms.com and replace the `access_key` value.
@@ -92,6 +92,6 @@ Because the domain is already registered on Cloudflare, DNS is handled for you:
 - Review the Twitch player on the live domain (Twitch requires the page hostname as `parent`; `main.js` sets it automatically).
 - Review the WWP callout (home + streaming) after the Oct 30 event; WWP copy rules: "benefiting Wounded Warrior Project" only, no dollar/percent claims, no merch tie-in.
 
-## Photos of Brook
+## About photos
 
-Real cutouts live in `assets/img/` as a `.webp` plus a `.png` fallback, served through `<picture>`: `brook-headshot` (homepage About Me), `brook-consulting` (consulting.html, pricing card, round crop) and `brook-stream` (streaming.html, "What the stream is"). The shared frame style is `.bio-photo` / `.about-avatar` in `assets/css/style.css`.
+Real cutouts live in `assets/img/` as a `.webp` plus a `.png` fallback, served through `<picture>`: `zerofilterdad-headshot` (homepage About Me), `zerofilterdad-consulting` (consulting.html, pricing card, round crop) and `zerofilterdad-stream` (streaming.html, "What the stream is"). The shared frame style is `.bio-photo` / `.about-avatar` in `assets/css/style.css`.

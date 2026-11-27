@@ -243,25 +243,37 @@
     joke();                                                                               // click / Enter / later taps = joke
   });
 
-  /* ---------- Animated Mini Zero (lazy, after page load; still image for reduced motion) ---------- */
+  /* ---------- Animated Mini Zero (fetched when visible; still image for reduced motion) ---------- */
   var still = char.querySelector('img');
   var vid = document.getElementById('mz-vid');
   function loadLoop() {
     if (reduce || !still) { return; }
-    var ua = navigator.userAgent;
-    var webkit = /iP(hone|ad|od)/.test(ua) || (/^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua));
-    var canWebm = vid && vid.canPlayType && vid.canPlayType('video/webm; codecs="vp9"');
-    if (webkit || !canWebm) {                                  // Safari: animated WebP (HEVC-alpha MOV can't be made on this box)
-      var im = new Image();
-      im.onload = function () { still.src = im.src; };
-      im.src = 'assets/img/mini-zero-loop.webp';
-      return;
+    function start() {
+      var ua = navigator.userAgent;
+      var webkit = /iP(hone|ad|od)/.test(ua) || (/^((?!chrome|android|crios|fxios|edg).)*safari/i.test(ua));
+      var canWebm = vid && vid.canPlayType && vid.canPlayType('video/webm; codecs="vp9"');
+      if (webkit || !canWebm) {                                  // Safari: animated WebP (HEVC-alpha MOV can't be made on this box)
+        var im = new Image();
+        im.onload = function () { still.src = im.src; };
+        im.src = 'assets/img/mini-zero-loop.webp';
+        return;
+      }
+      vid.src = 'assets/img/mini-zero-loop.webm';
+      vid.addEventListener('playing', function () { char.classList.add('has-vid'); vid.hidden = false; }, { once: true });
+      var p = vid.play(); if (p && p.catch) { p.catch(function () {}); }
+      if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (en) { if (!char.classList.contains('has-vid')) { return; } if (en[0].isIntersecting) { vid.play().catch(function () {}); } else { vid.pause(); } }).observe(char);
+      }
     }
-    vid.src = 'assets/img/mini-zero-loop.webm';
-    vid.addEventListener('playing', function () { char.classList.add('has-vid'); vid.hidden = false; }, { once: true });
-    var p = vid.play(); if (p && p.catch) { p.catch(function () {}); }
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (en) { if (!char.classList.contains('has-vid')) { return; } if (en[0].isIntersecting) { vid.play().catch(function () {}); } else { vid.pause(); } }).observe(char);
+      var io = new IntersectionObserver(function (en) {
+        if (!en[0].isIntersecting) { return; }
+        io.disconnect();
+        start();
+      }, { rootMargin: '200px 0px' });
+      io.observe(char);
+    } else {
+      start();
     }
   }
   function whenIdle(fn) { if ('requestIdleCallback' in window) { requestIdleCallback(fn, { timeout: 3000 }); } else { setTimeout(fn, 800); } }
