@@ -1,0 +1,8 @@
+# Old first-name photo paths were removed in #10. These 404 rules keep the
+# former URLs from being served if a cache still has the files.
+/assets/img/brook-headshot.webp /404 404
+/assets/img/brook-headshot.png /404 404
+/assets/img/brook-consulting.webp /404 404
+/assets/img/brook-consulting.png /404 404
+/assets/img/brook-stream.webp /404 404
+/assets/img/brook-stream.png /404 404
